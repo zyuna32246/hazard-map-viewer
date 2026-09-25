@@ -74,7 +74,7 @@
       backdrop-filter: blur(8px);
       border-radius: 14px;
       box-shadow: var(--shadow-lg);
-      z-index: 1000;
+      z-index: 1200;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -83,37 +83,59 @@
     }
 
     .sidebar.collapsed {
-      transform: translateX(-420px);
+      transform: translateX(-110%);
     }
 
     .sidebar-header {
-      padding: 15px 18px 12px;
+      padding: 14px 16px 12px;
       background: #ffffff;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
 
     .sidebar-header h1 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #202124;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .sidebar-header h1 i {
       color: var(--primary);
     }
 
+    .close-sidebar-btn {
+      background: #f1f3f4;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #3c4043;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .close-sidebar-btn:hover {
+      background: #e8eaed;
+      color: var(--primary);
+    }
+
     .toggle-sidebar-btn {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      width: 44px;
-      height: 44px;
+      top: 14px;
+      left: 12px;
+      height: 40px;
+      padding: 0 12px;
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 10px;
@@ -121,10 +143,12 @@
       display: none;
       align-items: center;
       justify-content: center;
+      gap: 6px;
       cursor: pointer;
-      z-index: 999;
-      font-size: 18px;
-      color: #5f6368;
+      z-index: 1050;
+      font-size: 13px;
+      font-weight: 700;
+      color: #202124;
     }
 
     .toggle-sidebar-btn:hover {
@@ -802,19 +826,33 @@
     }
 
     @media (max-width: 900px) {
-      .toggle-sidebar-btn {
-        display: flex;
-      }
       .sidebar {
-        width: calc(100vw - 32px);
+        top: 12px;
+        left: 12px;
+        width: calc(100vw - 24px);
+        max-height: calc(100vh - 24px);
+      }
+      /* サイドバーが開いている時は背後のマップ設定パネルを非表示にして重なりを防止 */
+      .sidebar:not(.collapsed) ~ .controls-panel {
+        opacity: 0;
+        pointer-events: none;
       }
       .quick-tools {
-        left: 16px;
+        left: 12px;
       }
       .controls-panel {
-        top: 16px;
-        right: 16px;
-        width: 265px;
+        top: 12px;
+        right: 12px;
+        width: auto;
+        min-width: 195px;
+        max-width: calc(100vw - 145px);
+        padding: 10px 12px;
+        transition: opacity 0.2s ease;
+      }
+      .controls-panel:not(.minimized) {
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+        z-index: 1250;
       }
       .controls-panel.minimized .controls-body {
         display: none;
@@ -835,8 +873,9 @@
     <div id="map"></div>
 
     <!-- サイドバー開閉ボタン -->
-    <button class="toggle-sidebar-btn" id="openSidebarBtn" title="検討中リストを開く">
-      <i class="fa-solid fa-bars"></i>
+    <button class="toggle-sidebar-btn" id="openSidebarBtn" title="検討中リスト・検索を開く">
+      <i class="fa-solid fa-list-ul" style="color: var(--primary);"></i>
+      <span>リスト・検索</span>
     </button>
 
     <!-- 左サイドバー: 検索 & 検討中物件リスト -->
@@ -849,8 +888,8 @@
             <span id="cloudStatusText">クラウド接続確認中...</span>
           </div>
         </div>
-        <button class="search-btn" id="closeSidebarBtn" title="サイドバーを隠す">
-          <i class="fa-solid fa-chevron-left"></i>
+        <button class="close-sidebar-btn" id="closeSidebarBtn" title="リストを折りたたんで地図を見る">
+          <i class="fa-solid fa-xmark"></i> 閉じる
         </button>
       </div>
 
@@ -1606,6 +1645,10 @@
     function focusProperty(idx) {
       const prop = savedProperties[idx];
       if (!prop) return;
+      if (window.innerWidth <= 900) {
+        sidebar.classList.add('collapsed');
+        openSidebarBtn.style.display = 'flex';
+      }
       map.flyTo([prop.lat, prop.lng], 16, { duration: 1.0 });
       if (propertyMarkers[idx]) {
         setTimeout(() => propertyMarkers[idx].openPopup(), 1050);
