@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>住まい探しハザードマップ（家族共有アプリ）</title>
+  <title>住まい探しハザード＆地盤ナビ（家族共有アプリ）</title>
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="/icon.svg">
   <link rel="apple-touch-icon" href="/icon.svg">
@@ -67,7 +67,7 @@
       position: absolute;
       top: 16px;
       left: 16px;
-      width: 390px;
+      width: 400px;
       max-width: calc(100vw - 32px);
       max-height: calc(100vh - 32px);
       background: var(--bg-panel);
@@ -158,7 +158,7 @@
 
     /* 検索ボックス */
     .search-box-wrap {
-      padding: 12px 16px;
+      padding: 10px 16px;
       background: #ffffff;
       border-bottom: 1px solid var(--border-color);
       position: relative;
@@ -169,7 +169,7 @@
       align-items: center;
       background: #f1f3f4;
       border-radius: 24px;
-      padding: 6px 14px;
+      padding: 5px 14px;
       border: 1px solid transparent;
       transition: all 0.2s;
     }
@@ -234,8 +234,8 @@
     .guide-banner {
       background: #e8f0fe;
       color: #174ea6;
-      padding: 8px 16px;
-      font-size: 12px;
+      padding: 7px 14px;
+      font-size: 11.5px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -246,7 +246,7 @@
     .properties-section {
       flex: 1;
       overflow-y: auto;
-      padding: 14px 16px;
+      padding: 12px 14px;
     }
 
     .section-title {
@@ -257,6 +257,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 6px;
     }
 
     .properties-list {
@@ -287,6 +288,7 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 6px;
+      gap: 6px;
     }
 
     .property-name {
@@ -348,6 +350,23 @@
       color: var(--danger);
     }
 
+    .badge-status-fav {
+      background: #fef7e0;
+      color: #d97706;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-status-visit {
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }
+
+    .badge-status-hold {
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+
     .property-meta {
       font-size: 12px;
       color: #5f6368;
@@ -357,7 +376,7 @@
 
     .empty-state {
       text-align: center;
-      padding: 28px 10px;
+      padding: 26px 10px;
       color: #80868b;
       font-size: 13px;
       line-height: 1.6;
@@ -379,25 +398,22 @@
       backdrop-filter: blur(8px);
       border-radius: 14px;
       box-shadow: var(--shadow-lg);
-      padding: 15px;
+      padding: 13px 15px;
       z-index: 1000;
-      width: 315px;
+      width: 325px;
       max-width: calc(100vw - 32px);
       border: 1px solid rgba(0, 0, 0, 0.08);
-      max-height: calc(100vh - 100px);
+      max-height: calc(100vh - 95px);
       overflow-y: auto;
     }
 
     .controls-header {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #202124;
-      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 8px;
     }
 
     .quick-hide-btn {
@@ -418,30 +434,30 @@
     }
 
     .layer-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .layer-group-title {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #5f6368;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .layer-toggle {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 7px 10px;
+      padding: 6px 9px;
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
 
     .layer-toggle:hover {
@@ -450,19 +466,19 @@
     }
 
     .layer-toggle label {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 500;
       color: #3c4043;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       cursor: pointer;
       flex: 1;
     }
 
     .layer-toggle input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       accent-color: var(--primary);
       cursor: pointer;
     }
@@ -473,23 +489,24 @@
       border-radius: 3px;
       display: inline-block;
       border: 1px solid rgba(0,0,0,0.15);
+      flex-shrink: 0;
     }
 
     /* スライダー */
     .opacity-control {
       margin-top: 8px;
       background: #ffffff;
-      padding: 10px 12px;
+      padding: 8px 11px;
       border-radius: 8px;
       border: 1px solid var(--border-color);
     }
 
     .opacity-label {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #5f6368;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       font-weight: 600;
     }
 
@@ -499,7 +516,7 @@
       cursor: pointer;
     }
 
-    /* 右下：ハザードマップ凡例パネル（国交省公式RGB完全準拠） */
+    /* 右下：ハザードマップ凡例パネル */
     .legend-panel {
       position: absolute;
       bottom: 24px;
@@ -508,11 +525,11 @@
       backdrop-filter: blur(8px);
       border-radius: 12px;
       box-shadow: var(--shadow-lg);
-      padding: 12px 14px;
+      padding: 11px 13px;
       z-index: 1000;
       border: 1px solid rgba(0, 0, 0, 0.08);
       font-size: 12px;
-      width: 265px;
+      width: 260px;
       transition: all 0.3s ease;
     }
 
@@ -527,7 +544,7 @@
     }
 
     .legend-body {
-      margin-top: 10px;
+      margin-top: 8px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -544,8 +561,8 @@
     }
 
     .legend-color-box {
-      width: 20px;
-      height: 14px;
+      width: 18px;
+      height: 13px;
       border-radius: 3px;
       border: 1px solid rgba(0, 0, 0, 0.2);
       flex-shrink: 0;
@@ -565,18 +582,18 @@
     }
 
     .hazard-popup {
-      font-size: 13px;
-      min-width: 270px;
-      max-width: 320px;
+      font-size: 12.5px;
+      min-width: 280px;
+      max-width: 330px;
     }
 
     .hazard-popup-header {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13.5px;
       color: #202124;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -586,46 +603,49 @@
       background: #f8f9fa;
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 8px 10px;
-      margin: 8px 0;
+      padding: 7px 9px;
+      margin: 6px 0;
     }
 
     .risk-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3px 0;
-      font-size: 12px;
+      padding: 2.5px 0;
+      font-size: 11.5px;
+      gap: 6px;
     }
 
     .risk-row + .risk-row {
       border-top: 1px dashed #e0e0e0;
       margin-top: 3px;
-      padding-top: 5px;
+      padding-top: 4px;
     }
 
     .hazard-popup-item {
       display: flex;
       justify-content: space-between;
       margin-bottom: 4px;
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
     .hazard-popup-label {
       color: #5f6368;
+      flex-shrink: 0;
     }
 
     .hazard-popup-value {
       font-weight: 600;
       color: #202124;
+      text-align: right;
     }
 
     .hazard-popup-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
-      margin-top: 10px;
-      padding-top: 8px;
+      gap: 5px;
+      margin-top: 8px;
+      padding-top: 7px;
       border-top: 1px solid var(--border-color);
     }
 
@@ -652,6 +672,10 @@
       border-color: #dadce0;
     }
 
+    .btn-full {
+      grid-column: span 2;
+    }
+
     .btn-save-prop {
       grid-column: span 2;
       background: var(--primary);
@@ -670,7 +694,7 @@
     .quick-tools {
       position: absolute;
       bottom: 24px;
-      left: 420px;
+      left: 430px;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -704,7 +728,7 @@
       transform: scale(1.05);
     }
 
-    /* 物件追加モーダル */
+    /* モーダル共通 */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -717,16 +741,24 @@
       align-items: center;
       justify-content: center;
       z-index: 2000;
+      padding: 12px;
     }
 
     .modal-box {
       background: #ffffff;
       border-radius: 14px;
-      width: 92%;
-      max-width: 440px;
+      width: 100%;
+      max-width: 460px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
       box-shadow: var(--shadow-lg);
       overflow: hidden;
       animation: modalFadeIn 0.2s ease-out;
+    }
+
+    .modal-box.wide {
+      max-width: 960px;
     }
 
     @keyframes modalFadeIn {
@@ -735,11 +767,12 @@
     }
 
     .modal-header {
-      padding: 15px 20px;
+      padding: 14px 18px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-shrink: 0;
     }
 
     .modal-header h3 {
@@ -751,22 +784,24 @@
     .modal-close-btn {
       border: none;
       background: none;
-      font-size: 20px;
+      font-size: 22px;
       color: #9aa0a6;
       cursor: pointer;
+      line-height: 1;
     }
 
     .modal-body {
-      padding: 18px 20px;
+      padding: 16px 18px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 11px;
+      overflow-y: auto;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
 
     .form-group label {
@@ -775,26 +810,28 @@
       color: #3c4043;
     }
 
-    .form-group input, .form-group textarea {
-      padding: 8px 12px;
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 7px 10px;
       border: 1px solid var(--border-color);
       border-radius: 8px;
       font-size: 13px;
       outline: none;
+      background: #ffffff;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
     }
 
     .modal-footer {
-      padding: 12px 20px 15px;
+      padding: 12px 18px;
       background: #f8f9fa;
       border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: flex-end;
       gap: 10px;
+      flex-shrink: 0;
     }
 
     .btn {
@@ -823,6 +860,37 @@
 
     .btn-primary:hover {
       background: var(--primary-hover);
+    }
+
+    /* 比較テーブル */
+    .compare-table-wrap {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 680px;
+    }
+
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border-color);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .compare-table th {
+      background: #f8f9fa;
+      font-weight: 700;
+      color: #3c4043;
+      white-space: nowrap;
+    }
+
+    .compare-table tr:hover td {
+      background: #f8fbff;
     }
 
     @media (max-width: 900px) {
@@ -882,7 +950,7 @@
     <div class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div>
-          <h1><i class="fa-solid fa-house-chimney-window"></i> 住まい探しハザードマップ</h1>
+          <h1><i class="fa-solid fa-house-chimney-window"></i> 住まい探しハザード＆地盤ナビ</h1>
           <div id="cloudStatusBadge" style="font-size: 11px; color: #5f6368; margin-top: 3px; display: flex; align-items: center; gap: 5px;">
             <span id="cloudStatusDot" style="width: 8px; height: 8px; border-radius: 50%; background: #fbbc04; display: inline-block;"></span>
             <span id="cloudStatusText">クラウド接続確認中...</span>
@@ -907,16 +975,21 @@
 
       <div class="guide-banner">
         <i class="fa-solid fa-hand-pointer"></i>
-        <span>地図上の気になる場所をクリックすると<strong>浸水深・土砂リスク・海抜</strong>を自動判定します</span>
+        <span>地図をクリックすると<strong>浸水・土砂・地盤(揺れやすさ)・海抜・最寄り避難所</strong>を自動診断します</span>
       </div>
 
       <!-- 物件・候補地リスト -->
       <div class="properties-section">
         <div class="section-title">
-          <span><i class="fa-solid fa-star" style="color: #fbbc04;"></i> 家族共有 検討リスト (<span id="propertyCount">0</span>件)</span>
-          <button class="btn-action" id="exportPropsBtn" title="リストをJSON形式でバックアップ保存" style="padding: 2px 8px; font-size: 11px;">
-            <i class="fa-solid fa-download"></i> 出力
-          </button>
+          <span><i class="fa-solid fa-star" style="color: #fbbc04;"></i> 家族共有リスト (<span id="propertyCount">0</span>件)</span>
+          <div style="display: flex; gap: 4px;">
+            <button class="btn-action" id="openCompareBtn" title="候補地を一覧表で横並び比較" style="padding: 3px 8px; font-size: 11px; background: #e8f0fe; color: var(--primary); border-color: #d2e3fc;">
+              <i class="fa-solid fa-table-columns"></i> 比較表
+            </button>
+            <button class="btn-action" id="exportPropsBtn" title="JSONバックアップ保存" style="padding: 3px 7px; font-size: 11px;">
+              <i class="fa-solid fa-download"></i>
+            </button>
+          </div>
         </div>
         <div class="properties-list" id="propertiesList"></div>
       </div>
@@ -929,102 +1002,135 @@
           <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> マップ設定
           <i class="fa-solid fa-chevron-down" id="controlsChevron" style="font-size: 11px; color: #80868b;"></i>
         </span>
-        <button class="quick-hide-btn" id="quickHideBtn" title="押すとハザード色を一時非表示にして下のGoogleマップを見やすくします">
+        <button class="quick-hide-btn" id="quickHideBtn" title="押すと重ねたレイヤーを一時非表示にして下のGoogleマップを見やすくします">
           <i class="fa-solid fa-eye-slash"></i> 一時OFF
         </button>
       </div>
-      <div class="controls-body" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border-color);">
+      <div class="controls-body" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-color);">
 
-      <!-- ベース地図選択 -->
-      <div class="layer-group">
-        <div class="layer-group-title">
-          <i class="fa-brands fa-google"></i> ベース地図の切り替え
-        </div>
-        <select id="baseMapSelect" style="width: 100%; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 12.5px; background: #ffffff; outline: none; cursor: pointer; font-weight: 500;">
-          <option value="google_roadmap">Googleマップ（標準 道路・施設地図）</option>
-          <option value="google_hybrid">Googleマップ（航空写真＋道路・地名）</option>
-          <option value="gsi_pale">国土地理院 淡色地図（ハザード色が見やすい）</option>
-          <option value="osm">OpenStreetMap</option>
-        </select>
-      </div>
-
-      <!-- 災害レイヤーのON/OFF -->
-      <div class="layer-group">
-        <div class="layer-group-title">
-          <i class="fa-solid fa-shield-halved"></i> 重ねるハザード情報（複数選択可）
+        <!-- ベース地図選択 -->
+        <div class="layer-group">
+          <div class="layer-group-title">
+            <i class="fa-brands fa-google"></i> ベース地図
+          </div>
+          <select id="baseMapSelect" style="width: 100%; padding: 6px 9px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 12px; background: #ffffff; outline: none; cursor: pointer; font-weight: 500;">
+            <option value="google_roadmap">Googleマップ（標準 道路・施設地図）</option>
+            <option value="google_hybrid">Googleマップ（航空写真＋道路・地名）</option>
+            <option value="gsi_pale">国土地理院 淡色地図（色が見やすい白地図）</option>
+            <option value="osm">OpenStreetMap</option>
+          </select>
         </div>
 
-        <!-- 洪水浸水想定区域（想定最大規模 L2） -->
-        <div class="layer-toggle">
-          <label for="layerFlood">
-            <span class="layer-color-indicator" style="background: #f285c9;"></span>
-            洪水浸水想定区域 (最大規模 L2)
-          </label>
-          <input type="checkbox" id="layerFlood" checked>
+        <!-- 災害ハザードレイヤーのON/OFF -->
+        <div class="layer-group">
+          <div class="layer-group-title">
+            <i class="fa-solid fa-shield-halved"></i> ① 水害・土砂・避難所レイヤー
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerFlood">
+              <span class="layer-color-indicator" style="background: #f285c9;"></span>
+              洪水浸水想定区域 (最大規模 L2)
+            </label>
+            <input type="checkbox" id="layerFlood" checked>
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerCollapse">
+              <span class="layer-color-indicator" style="background: #ff3366;"></span>
+              家屋倒壊等氾濫想定区域
+            </label>
+            <input type="checkbox" id="layerCollapse">
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerSteep">
+              <span class="layer-color-indicator" style="background: #fae600;"></span>
+              土砂災害 (急傾斜地・がけ崩れ)
+            </label>
+            <input type="checkbox" id="layerSteep" checked>
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerDebris">
+              <span class="layer-color-indicator" style="background: #fa2800;"></span>
+              土砂災害 (土石流)
+            </label>
+            <input type="checkbox" id="layerDebris" checked>
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerTsunami">
+              <span class="layer-color-indicator" style="background: #0077be;"></span>
+              津波浸水想定区域
+            </label>
+            <input type="checkbox" id="layerTsunami">
+          </div>
+
+          <div class="layer-toggle">
+            <label for="layerShelters">
+              <span class="layer-color-indicator" style="background: #1e8e3e;"></span>
+              🏃 指定緊急避難場所ピンを表示
+            </label>
+            <input type="checkbox" id="layerShelters">
+          </div>
         </div>
 
-        <!-- 家屋倒壊等氾濫想定区域（氾濫流） -->
-        <div class="layer-toggle">
-          <label for="layerCollapse">
-            <span class="layer-color-indicator" style="background: #ff3366;"></span>
-            家屋倒壊等氾濫想定区域 (氾濫流)
-          </label>
-          <input type="checkbox" id="layerCollapse">
+        <!-- 過去の姿・地盤・徒歩圏レイヤー -->
+        <div class="layer-group">
+          <div class="layer-group-title">
+            <i class="fa-solid fa-clock-rotate-left"></i> ② 昔の姿・地盤・高低差・徒歩圏
+          </div>
+
+          <div class="layer-toggle" title="約50年前（1974〜78年）の航空写真を重ねて、元が田んぼや池・沼だったか確認できます">
+            <label for="layerOldPhoto">
+              <span class="layer-color-indicator" style="background: #8d6e63;"></span>
+              🕰️ 昭和の航空写真 (1974-78年 昔の姿)
+            </label>
+            <input type="checkbox" id="layerOldPhoto">
+          </div>
+
+          <div class="layer-toggle" title="旧河道（昔の川の跡）や後背湿地、自然堤防、盛土などの地形分類を表示します">
+            <label for="layerLandform">
+              <span class="layer-color-indicator" style="background: #8bc34a;"></span>
+              🗺️ 治水地形分類図 (旧河道・湿地・盛土)
+            </label>
+            <input type="checkbox" id="layerLandform">
+          </div>
+
+          <div class="layer-toggle" title="周囲より低い窪地や坂道の高低差を色と陰影でくっきり表示します">
+            <label for="layerRelief">
+              <span class="layer-color-indicator" style="background: linear-gradient(90deg, #4caf50, #ffeb3b, #e65100);"></span>
+              ⛰️ 高低差くっきり標高＆陰影図
+            </label>
+            <input type="checkbox" id="layerRelief">
+          </div>
+
+          <div class="layer-toggle" title="選択地点から徒歩5分（400m）・徒歩10分（800m）の距離サークルを表示します">
+            <label for="layerWalkCircle">
+              <span class="layer-color-indicator" style="background: #1a73e8; border-radius: 50%;"></span>
+              ⭕ 徒歩5分(400m)・10分(800m)圏内の円
+            </label>
+            <input type="checkbox" id="layerWalkCircle" checked>
+          </div>
         </div>
 
-        <!-- 土砂災害警戒区域（急傾斜地の崩壊） -->
-        <div class="layer-toggle">
-          <label for="layerSteep">
-            <span class="layer-color-indicator" style="background: #fae600;"></span>
-            土砂災害 (急傾斜地・がけ崩れ)
-          </label>
-          <input type="checkbox" id="layerSteep" checked>
+        <!-- 透過度スライダー -->
+        <div class="opacity-control">
+          <div class="opacity-label">
+            <span>重ねたマップの濃さ（不透明度）</span>
+            <span id="opacityValue">65%</span>
+          </div>
+          <input type="range" class="opacity-slider" id="opacitySlider" min="0" max="100" value="65">
+          <div style="display: flex; justify-content: space-between; font-size: 10px; color: #80868b; margin-top: 2px;">
+            <span>0% (Googleマップのみ)</span>
+            <span>100% (重ねた図を強調)</span>
+          </div>
         </div>
-
-        <!-- 土砂災害警戒区域（土石流） -->
-        <div class="layer-toggle">
-          <label for="layerDebris">
-            <span class="layer-color-indicator" style="background: #fa2800;"></span>
-            土砂災害 (土石流)
-          </label>
-          <input type="checkbox" id="layerDebris" checked>
-        </div>
-
-        <!-- 土砂災害警戒区域（地すべり） -->
-        <div class="layer-toggle">
-          <label for="layerLandslide">
-            <span class="layer-color-indicator" style="background: #ff9800;"></span>
-            土砂災害 (地すべり)
-          </label>
-          <input type="checkbox" id="layerLandslide">
-        </div>
-
-        <!-- 高潮・津波 -->
-        <div class="layer-toggle">
-          <label for="layerTsunami">
-            <span class="layer-color-indicator" style="background: #0077be;"></span>
-            津波浸水想定区域
-          </label>
-          <input type="checkbox" id="layerTsunami">
-        </div>
-      </div>
-
-      <!-- 透過度スライダー -->
-      <div class="opacity-control">
-        <div class="opacity-label">
-          <span>ハザードマップの濃さ（不透明度）</span>
-          <span id="opacityValue">65%</span>
-        </div>
-        <input type="range" class="opacity-slider" id="opacitySlider" min="0" max="100" value="65">
-        <div style="display: flex; justify-content: space-between; font-size: 10px; color: #80868b; margin-top: 2px;">
-          <span>0% (Googleマップのみ)</span>
-          <span>100% (色をくっきり)</span>
-        </div>
-      </div>
       </div>
     </div>
 
-    <!-- 右下：凡例パネル（国交省公式タイルRGB完全一致） -->
+    <!-- 右下：凡例パネル -->
     <div class="legend-panel" id="legendPanel">
       <div class="legend-header" id="legendHeader" title="クリックで開閉">
         <span><i class="fa-solid fa-palette" style="color: var(--primary);"></i> ハザードマップ凡例</span>
@@ -1056,24 +1162,23 @@
           <div class="legend-color-box" style="background: rgb(247, 245, 169);"></div>
           <div class="legend-desc"><strong>0.5m未満</strong>（大人の膝まで）</div>
         </div>
-        <div style="font-size: 10.5px; font-weight: 700; color: #5f6368; margin-top: 6px; padding-top: 4px; border-top: 1px dashed var(--border-color);">■ 土砂災害警戒区域</div>
+        <div style="font-size: 10.5px; font-weight: 700; color: #5f6368; margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--border-color);">■ 土砂災害警戒区域</div>
         <div class="legend-item">
           <div class="legend-color-box" style="background: rgb(250, 230, 0);"></div>
-          <div class="legend-desc"><strong>警戒区域 (イエロー)</strong>: 避難が必要</div>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color-box" style="background: rgb(250, 40, 0);"></div>
-          <div class="legend-desc"><strong>特別警戒 (レッド)</strong>: 建物損壊恐れ</div>
+          <div class="legend-desc"><strong>警戒区域 (黄)</strong> / <strong>特別警戒 (赤)</strong></div>
         </div>
       </div>
     </div>
 
     <!-- 左下クイックツール -->
     <div class="quick-tools">
+      <button class="tool-btn" id="clearPoiBtn" title="検索した周辺施設ピンを消去" style="display: none; color: var(--danger);">
+        <i class="fa-solid fa-eraser"></i>
+      </button>
       <button class="tool-btn" id="currentLocationBtn" title="現在地へ移動">
         <i class="fa-solid fa-crosshairs"></i>
       </button>
-      <button class="tool-btn" id="fukuyamaBtn" title="福山市（添付画像エリア：駅家・御幸周辺）へ移動">
+      <button class="tool-btn" id="fukuyamaBtn" title="福山市（駅家・御幸周辺）へ移動">
         <i class="fa-solid fa-house-flood-water"></i>
       </button>
     </div>
@@ -1091,6 +1196,27 @@
           <label>物件名・候補地タイトル *</label>
           <input type="text" id="propNameInput" placeholder="例: 〇〇ハイツ 201号室 / 駅家町 分譲地">
         </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="form-group">
+            <label>検討ステータス</label>
+            <select id="propStatusInput">
+              <option value="👑 本命">👑 本命（最有力）</option>
+              <option value="📅 内覧予定">📅 内覧予定・問い合わせ中</option>
+              <option value="🤔 検討中" selected>🤔 検討中・キープ</option>
+              <option value="💨 見送り">💨 見送り・比較用</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>家族のお気に入り度</label>
+            <select id="propRatingInput">
+              <option value="5">⭐⭐⭐⭐⭐ (★5 最高)</option>
+              <option value="4">⭐⭐⭐⭐ (★4 良い)</option>
+              <option value="3" selected>⭐⭐⭐ (★3 普通)</option>
+              <option value="2">⭐⭐ (★2 微妙)</option>
+              <option value="1">⭐ (★1 厳しい)</option>
+            </select>
+          </div>
+        </div>
         <div class="form-group">
           <label><i class="fa-solid fa-link" style="color: var(--primary);"></i> 住宅情報ページのURL（SUUMO・HOME'S・不動産サイト等）</label>
           <input type="url" id="propUrlInput" placeholder="https://suumo.jp/... （貼り付け）">
@@ -1099,29 +1225,33 @@
           <label>住所（自動取得・編集可）</label>
           <input type="text" id="propAddressInput">
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
           <div class="form-group">
             <label>自動判定：洪水リスク</label>
-            <input type="text" id="propFloodInput" readonly style="background: #f8f9fa; font-weight: 600;">
+            <input type="text" id="propFloodInput" readonly style="background: #f8f9fa; font-weight: 600; font-size: 12px;">
           </div>
           <div class="form-group">
             <label>自動判定：土砂リスク</label>
-            <input type="text" id="propLandslideInput" readonly style="background: #f8f9fa; font-weight: 600;">
+            <input type="text" id="propLandslideInput" readonly style="background: #f8f9fa; font-weight: 600; font-size: 12px;">
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
           <div class="form-group">
-            <label>海抜・標高</label>
-            <input type="text" id="propElevationInput" readonly style="background: #f8f9fa;">
+            <label>地盤・地震の揺れやすさ</label>
+            <input type="text" id="propGroundInput" readonly style="background: #f8f9fa; font-weight: 600; font-size: 12px;">
           </div>
           <div class="form-group">
-            <label>家賃 / 価格目安</label>
-            <input type="text" id="propPriceInput" placeholder="例: 6.8万円 / 2,480万円">
+            <label>海抜 / 最寄り避難所</label>
+            <input type="text" id="propElevationInput" readonly style="background: #f8f9fa; font-size: 12px;">
           </div>
         </div>
         <div class="form-group">
-          <label>メモ（階数、駅距離、周辺環境など）</label>
-          <textarea id="propMemoInput" rows="2" placeholder="例: 2階以上なら浸水深3mでも安心、スーパー徒歩5分"></textarea>
+          <label>家賃 / 価格目安</label>
+          <input type="text" id="propPriceInput" placeholder="例: 6.8万円 / 2,480万円">
+        </div>
+        <div class="form-group">
+          <label>家族メモ（階数、日当たり、周辺環境など）</label>
+          <textarea id="propMemoInput" rows="2" placeholder="例: 2階以上なら安心、スーパー徒歩5分、昔は田んぼではない"></textarea>
         </div>
       </div>
       <div class="modal-footer">
@@ -1131,12 +1261,27 @@
     </div>
   </div>
 
+  <!-- 横並び比較表モーダル -->
+  <div class="modal-overlay" id="compareModal">
+    <div class="modal-box wide">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-table-columns" style="color: var(--primary);"></i> 検討中物件の横並び比較シート</h3>
+        <button class="modal-close-btn" id="closeCompareModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="compare-table-wrap" id="compareTableContainer"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="closeCompareFooterBtn">閉じる</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <script>
     // --- 初期設定 ---
-    // 初期位置: 添付画像の中心付近（広島県福山市 御幸・駅家・千田周辺）
     const INITIAL_LAT = 34.5350;
     const INITIAL_LNG = 133.3480;
     const INITIAL_ZOOM = 14;
@@ -1178,12 +1323,12 @@
         map.removeLayer(currentBaseLayer);
         currentBaseLayer = baseLayers[selected];
         currentBaseLayer.addTo(map);
-        refreshHazardLayersZIndex();
+        refreshOverlayLayersZIndex();
       }
     });
 
-    // --- 国土交通省 ハザードマップタイル ---
-    let hazardOpacity = 0.65;
+    // --- オーバーレイレイヤー（ハザード＋昭和航空写真＋治水地形分類＋標高陰影） ---
+    let overlayOpacity = 0.65;
     let isQuickHidden = false;
 
     const TILE_URLS = {
@@ -1192,42 +1337,66 @@
       steep: 'https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki/{z}/{x}/{y}.png',
       debris: 'https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki/{z}/{x}/{y}.png',
       landslide: 'https://disaportaldata.gsi.go.jp/raster/05_jisuberikeikaikuiki/{z}/{x}/{y}.png',
-      tsunami: 'https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_data/{z}/{x}/{y}.png'
+      tsunami: 'https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_data/{z}/{x}/{y}.png',
+      oldPhoto: 'https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg',
+      landform: 'https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/{z}/{x}/{y}.png',
+      relief: 'https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png',
+      hillshade: 'https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png'
     };
 
-    const hazardLayers = {
-      flood: L.tileLayer(TILE_URLS.flood, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20, attribution: '国土交通省ハザードマップ' }),
-      collapse: L.tileLayer(TILE_URLS.collapse, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20 }),
-      steep: L.tileLayer(TILE_URLS.steep, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20 }),
-      debris: L.tileLayer(TILE_URLS.debris, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20 }),
-      landslide: L.tileLayer(TILE_URLS.landslide, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20 }),
-      tsunami: L.tileLayer(TILE_URLS.tsunami, { opacity: hazardOpacity, maxNativeZoom: 17, maxZoom: 20 })
+    const overlayLayers = {
+      oldPhoto: L.tileLayer(TILE_URLS.oldPhoto, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20, attribution: '国土地理院(1974-78年空中写真)' }),
+      landform: L.tileLayer(TILE_URLS.landform, { opacity: overlayOpacity, maxNativeZoom: 16, maxZoom: 20, attribution: '国土地理院(治水地形分類図)' }),
+      relief: L.layerGroup([
+        L.tileLayer(TILE_URLS.relief, { opacity: overlayOpacity * 0.85, maxNativeZoom: 15, maxZoom: 20, attribution: '国土地理院(色別標高図)' }),
+        L.tileLayer(TILE_URLS.hillshade, { opacity: overlayOpacity * 0.6, maxNativeZoom: 16, maxZoom: 20 })
+      ]),
+      flood: L.tileLayer(TILE_URLS.flood, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20, attribution: '国土交通省ハザードマップ' }),
+      collapse: L.tileLayer(TILE_URLS.collapse, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20 }),
+      steep: L.tileLayer(TILE_URLS.steep, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20 }),
+      debris: L.tileLayer(TILE_URLS.debris, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20 }),
+      tsunami: L.tileLayer(TILE_URLS.tsunami, { opacity: overlayOpacity, maxNativeZoom: 17, maxZoom: 20 })
     };
 
-    // 初期表示レイヤー
-    hazardLayers.flood.addTo(map);
-    hazardLayers.steep.addTo(map);
-    hazardLayers.debris.addTo(map);
+    // 初期ONのレイヤーのみ追加（他のレイヤーはONにした瞬間だけ読み込むため動作が軽快）
+    overlayLayers.flood.addTo(map);
+    overlayLayers.steep.addTo(map);
+    overlayLayers.debris.addTo(map);
 
-    function refreshHazardLayersZIndex() {
-      Object.values(hazardLayers).forEach(layer => {
-        if (map.hasLayer(layer)) layer.bringToFront();
+    function setAllOverlaysOpacity(val) {
+      Object.entries(overlayLayers).forEach(([key, layer]) => {
+        if (key === 'relief') {
+          const layers = layer.getLayers();
+          if (layers[0]) layers[0].setOpacity(val * 0.85);
+          if (layers[1]) layers[1].setOpacity(val * 0.6);
+        } else if (layer.setOpacity) {
+          layer.setOpacity(val);
+        }
       });
     }
 
-    // チェックボックス連動
+    function refreshOverlayLayersZIndex() {
+      Object.values(overlayLayers).forEach(layer => {
+        if (map.hasLayer(layer) && layer.bringToFront) layer.bringToFront();
+      });
+    }
+
     const layerCheckMap = {
       layerFlood: 'flood',
       layerCollapse: 'collapse',
       layerSteep: 'steep',
       layerDebris: 'debris',
-      layerLandslide: 'landslide',
-      layerTsunami: 'tsunami'
+      layerTsunami: 'tsunami',
+      layerOldPhoto: 'oldPhoto',
+      layerLandform: 'landform',
+      layerRelief: 'relief'
     };
 
     Object.entries(layerCheckMap).forEach(([id, key]) => {
-      document.getElementById(id).addEventListener('change', (e) => {
-        const layer = hazardLayers[key];
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('change', (e) => {
+        const layer = overlayLayers[key];
         if (e.target.checked) {
           if (!map.hasLayer(layer)) layer.addTo(map);
         } else {
@@ -1236,35 +1405,359 @@
       });
     });
 
-    // 透明度調整スライダー
+    // 透明度スライダー
     const opacitySlider = document.getElementById('opacitySlider');
     const opacityValue = document.getElementById('opacityValue');
 
     opacitySlider.addEventListener('input', (e) => {
-      hazardOpacity = e.target.value / 100;
+      overlayOpacity = e.target.value / 100;
       opacityValue.textContent = `${e.target.value}%`;
       if (!isQuickHidden) {
-        Object.values(hazardLayers).forEach(layer => layer.setOpacity(hazardOpacity));
+        setAllOverlaysOpacity(overlayOpacity);
       }
     });
 
-    // ハザード一時OFFボタン（下のGoogleマップを瞬時に確認）
+    // ハザード一時OFFボタン
     const quickHideBtn = document.getElementById('quickHideBtn');
     quickHideBtn.addEventListener('click', () => {
       isQuickHidden = !isQuickHidden;
       if (isQuickHidden) {
-        Object.values(hazardLayers).forEach(layer => layer.setOpacity(0));
+        setAllOverlaysOpacity(0);
         quickHideBtn.classList.add('active');
-        quickHideBtn.innerHTML = '<i class="fa-solid fa-eye"></i> ハザードを再表示';
+        quickHideBtn.innerHTML = '<i class="fa-solid fa-eye"></i> 再表示';
       } else {
-        Object.values(hazardLayers).forEach(layer => layer.setOpacity(hazardOpacity));
+        setAllOverlaysOpacity(overlayOpacity);
         quickHideBtn.classList.remove('active');
-        quickHideBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> ハザード一時OFF';
+        quickHideBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> 一時OFF';
       }
     });
 
+    // --- ⑥ 指定緊急避難場所（国土地理院 skhb01 GeoJSON z=10 タイル）オンデマンド取得 ---
+    const shelterLayerGroup = L.layerGroup();
+    const loadedShelterTiles = new Set();
+    let cachedShelters = []; // 最寄り避難所計算用キャッシュ
+
+    function latLngToTileXY(lat, lng, z) {
+      const n = Math.pow(2, z);
+      const x = Math.floor(((lng + 180) / 360) * n);
+      const latRad = (lat * Math.PI) / 180;
+      const y = Math.floor(((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n);
+      return { x, y };
+    }
+
+    async function fetchSheltersAround(lat, lng, renderPins = false) {
+      const { x, y } = latLngToTileXY(lat, lng, 10);
+      const key = `10/${x}/${y}`;
+      if (!loadedShelterTiles.has(key)) {
+        loadedShelterTiles.add(key);
+        try {
+          const res = await fetch(`https://cyberjapandata.gsi.go.jp/xyz/skhb01/10/${x}/${y}.geojson`);
+          if (res.ok) {
+            const geojson = await res.json();
+            if (geojson && Array.isArray(geojson.features)) {
+              geojson.features.forEach(f => {
+                if (f.geometry && f.geometry.coordinates) {
+                  const [sLng, sLat] = f.geometry.coordinates;
+                  const p = f.properties || {};
+                  cachedShelters.push({
+                    lat: sLat,
+                    lng: sLng,
+                    name: p.name || '指定緊急避難場所',
+                    address: p.address || '',
+                    remarks: p.remarks || '',
+                    flood: p.disaster1 === 1,
+                    landslide: p.disaster2 === 1,
+                    quake: p.disaster4 === 1,
+                    tsunami: p.disaster5 === 1
+                  });
+                }
+              });
+            }
+          }
+        } catch (e) {
+          console.warn('Shelter fetch error:', e);
+        }
+      }
+
+      if (renderPins) {
+        renderVisibleShelters();
+      }
+    }
+
+    function renderVisibleShelters() {
+      shelterLayerGroup.clearLayers();
+      const bounds = map.getBounds();
+      // 画面内の避難所のみ最大80件まで描画（動作を軽く保つため）
+      const inBounds = cachedShelters.filter(s => bounds.contains([s.lat, s.lng])).slice(0, 80);
+
+      inBounds.forEach(s => {
+        const icon = L.divIcon({
+          className: 'shelter-pin',
+          html: `<div style="background:#1e8e3e; color:#fff; width:24px; height:24px; border-radius:6px; display:flex; align-items:center; justify-content:center; border:2px solid #fff; box-shadow:0 2px 5px rgba(0,0,0,0.25); font-size:12px;" title="${escapeAttr(s.name)}">
+                  <i class="fa-solid fa-person-running"></i>
+                 </div>`,
+          iconSize: [24, 24],
+          iconAnchor: [12, 12]
+        });
+
+        const tags = [
+          s.flood ? '<span class="badge badge-safe">洪水〇</span>' : '',
+          s.landslide ? '<span class="badge badge-safe">土砂〇</span>' : '',
+          s.quake ? '<span class="badge badge-safe">地震〇</span>' : '',
+          s.tsunami ? '<span class="badge badge-safe">津波〇</span>' : ''
+        ].filter(Boolean).join(' ');
+
+        L.marker([s.lat, s.lng], { icon })
+          .bindPopup(`
+            <div style="font-size:12px; min-width:200px;">
+              <div style="font-weight:700; color:#1e8e3e; margin-bottom:4px;">
+                <i class="fa-solid fa-person-running"></i> ${escapeHtml(s.name)}
+              </div>
+              <div style="color:#5f6368; margin-bottom:6px;">${escapeHtml(s.address)}</div>
+              <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:4px;">${tags}</div>
+              ${s.remarks ? `<div style="background:#fef7e0; color:#b06000; padding:4px 6px; border-radius:4px; font-size:11px;">⚠️ ${escapeHtml(s.remarks)}</div>` : ''}
+            </div>
+          `)
+          .addTo(shelterLayerGroup);
+      });
+    }
+
+    document.getElementById('layerShelters').addEventListener('change', async (e) => {
+      if (e.target.checked) {
+        shelterLayerGroup.addTo(map);
+        const c = map.getCenter();
+        await fetchSheltersAround(c.lat, c.lng, true);
+      } else {
+        map.removeLayer(shelterLayerGroup);
+      }
+    });
+
+    map.on('moveend', () => {
+      if (map.hasLayer(shelterLayerGroup)) {
+        const c = map.getCenter();
+        fetchSheltersAround(c.lat, c.lng, true);
+      }
+    });
+
+    // 2点間の直線距離(m)
+    function calcDistanceMeters(lat1, lng1, lat2, lng2) {
+      return Math.round(map.distance([lat1, lng1], [lat2, lng2]));
+    }
+
+    async function findNearestShelter(lat, lng) {
+      await fetchSheltersAround(lat, lng, map.hasLayer(shelterLayerGroup));
+      if (cachedShelters.length === 0) return null;
+      let nearest = null;
+      let minDist = Infinity;
+      for (const s of cachedShelters) {
+        const d = calcDistanceMeters(lat, lng, s.lat, s.lng);
+        if (d < minDist) {
+          minDist = d;
+          nearest = s;
+        }
+      }
+      if (!nearest) return null;
+      const walkMin = Math.max(1, Math.ceil(minDist / 80)); // 徒歩分速80m換算
+      return { ...nearest, dist: minDist, walkMin };
+    }
+
+    // --- ④ 徒歩5分(400m)・徒歩10分(800m)サークル描画 ---
+    const walkCircleGroup = L.layerGroup().addTo(map);
+    let lastCircleCenter = null;
+
+    function drawWalkCircles(lat, lng) {
+      lastCircleCenter = { lat, lng };
+      walkCircleGroup.clearLayers();
+      if (!document.getElementById('layerWalkCircle').checked) return;
+
+      // 徒歩5分（400m）
+      L.circle([lat, lng], {
+        radius: 400,
+        color: '#1e8e3e',
+        weight: 2,
+        dashArray: '6, 6',
+        fillColor: '#1e8e3e',
+        fillOpacity: 0.04,
+        interactive: false
+      }).addTo(walkCircleGroup);
+
+      // 徒歩10分（800m）
+      L.circle([lat, lng], {
+        radius: 800,
+        color: '#1a73e8',
+        weight: 2,
+        dashArray: '6, 6',
+        fillColor: '#1a73e8',
+        fillOpacity: 0.03,
+        interactive: false
+      }).addTo(walkCircleGroup);
+    }
+
+    document.getElementById('layerWalkCircle').addEventListener('change', (e) => {
+      if (e.target.checked && lastCircleCenter) {
+        drawWalkCircles(lastCircleCenter.lat, lastCircleCenter.lng);
+      } else {
+        walkCircleGroup.clearLayers();
+      }
+    });
+
+    // --- ⑦ 防災科研 J-SHIS API：微地形区分 & 地震の揺れやすさ（表層地盤増幅率）取得 ---
+    async function getGroundAmplification(lat, lng) {
+      try {
+        const res = await fetch(`https://www.j-shis.bosai.go.jp/map/api/sstrct/V4/meshinfo.geojson?position=${lng},${lat}&epsg=4326`);
+        const data = await res.json();
+        if (data && data.features && data.features.length > 0) {
+          const p = data.features[0].properties || {};
+          const jname = p.JNAME || '不明';
+          const arv = parseFloat(p.ARV);
+          let shakeLabel = '普通';
+          let level = 'safe';
+          if (!isNaN(arv)) {
+            if (arv >= 1.8) {
+              shakeLabel = `揺れやすい(増幅率${arv})`;
+              level = 'danger';
+            } else if (arv >= 1.4) {
+              shakeLabel = `やや揺れやすい(増幅率${arv})`;
+              level = 'warn';
+            } else {
+              shakeLabel = `揺れにくい良好地盤(増幅率${arv})`;
+              level = 'safe';
+            }
+          }
+          return {
+            jname,
+            arv: isNaN(arv) ? '-' : arv,
+            summary: `${jname} / ${shakeLabel}`,
+            level
+          };
+        }
+      } catch (e) {
+        console.warn('J-SHIS fetch error:', e);
+      }
+      return { jname: 'データなし', arv: '-', summary: '取得不可', level: 'safe' };
+    }
+
+    // --- ⑤ 周辺の生活施設（スーパー・コンビニ・小中学校・病院・駅・公園）オンデマンド検索 ---
+    const poiLayerGroup = L.layerGroup().addTo(map);
+    const clearPoiBtn = document.getElementById('clearPoiBtn');
+
+    clearPoiBtn.addEventListener('click', () => {
+      poiLayerGroup.clearLayers();
+      clearPoiBtn.style.display = 'none';
+    });
+
+    window.searchNearbyFacilities = async function(lat, lng) {
+      const btn = document.getElementById('poiSearchBtn');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 周辺1kmの施設を検索中...';
+      }
+
+      const query = `
+        [out:json][timeout:12];
+        (
+          node["shop"~"supermarket|convenience"](around:1000,${lat},${lng});
+          way["shop"~"supermarket|convenience"](around:1000,${lat},${lng});
+          node["amenity"~"school|kindergarten|hospital|clinic"](around:1000,${lat},${lng});
+          way["amenity"~"school|kindergarten|hospital|clinic"](around:1000,${lat},${lng});
+          node["railway"="station"](around:1500,${lat},${lng});
+        );
+        out center 60;
+      `;
+
+      try {
+        const res = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        poiLayerGroup.clearLayers();
+
+        if (!data || !data.elements || data.elements.length === 0) {
+          if (btn) btn.innerHTML = '周辺1kmに該当データが見つかりませんでした';
+          return;
+        }
+
+        const nearestSummary = { supermarket: null, convenience: null, school: null, medical: null, station: null };
+
+        data.elements.forEach(el => {
+          const pLat = el.lat || (el.center && el.center.lat);
+          const pLng = el.lon || (el.center && el.center.lon);
+          if (!pLat || !pLng) return;
+
+          const tags = el.tags || {};
+          const name = tags.name || '名称未設定の施設';
+          const dist = calcDistanceMeters(lat, lng, pLat, pLng);
+          const walkMin = Math.max(1, Math.ceil(dist / 80));
+
+          let category = 'other';
+          let iconHtml = 'fa-location-dot';
+          let bgColor = '#5f6368';
+          let catLabel = '施設';
+
+          if (tags.shop === 'supermarket') {
+            category = 'supermarket'; iconHtml = 'fa-cart-shopping'; bgColor = '#e65100'; catLabel = 'スーパー';
+          } else if (tags.shop === 'convenience') {
+            category = 'convenience'; iconHtml = 'fa-store'; bgColor = '#0288d1'; catLabel = 'コンビニ';
+          } else if (tags.amenity === 'school' || tags.amenity === 'kindergarten') {
+            category = 'school'; iconHtml = 'fa-graduation-cap'; bgColor = '#7b1fa2'; catLabel = '学校・園';
+          } else if (tags.amenity === 'hospital' || tags.amenity === 'clinic') {
+            category = 'medical'; iconHtml = 'fa-house-medical'; bgColor = '#c62828'; catLabel = '病院・医院';
+          } else if (tags.railway === 'station') {
+            category = 'station'; iconHtml = 'fa-train-subway'; bgColor = '#1565c0'; catLabel = '駅';
+          }
+
+          if (nearestSummary[category] === null || dist < nearestSummary[category].dist) {
+            nearestSummary[category] = { name, dist, walkMin };
+          }
+
+          const icon = L.divIcon({
+            className: 'poi-pin',
+            html: `<div style="background:${bgColor}; color:#fff; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #fff; box-shadow:0 2px 5px rgba(0,0,0,0.3); font-size:11px;">
+                    <i class="fa-solid ${iconHtml}"></i>
+                   </div>`,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13]
+          });
+
+          L.marker([pLat, pLng], { icon })
+            .bindPopup(`
+              <div style="font-size:12px;">
+                <span class="badge" style="background:${bgColor}; color:#fff; margin-bottom:4px;">${catLabel}</span>
+                <div style="font-weight:700; color:#202124;">${escapeHtml(name)}</div>
+                <div style="color:#5f6368; margin-top:2px;">選択地点から <strong>約${dist}m（徒歩約${walkMin}分）</strong></div>
+              </div>
+            `)
+            .addTo(poiLayerGroup);
+        });
+
+        clearPoiBtn.style.display = 'flex';
+
+        const summaryBox = document.getElementById('poiSummaryBox');
+        if (summaryBox) {
+          const fmt = (item, label) => item
+            ? `<div class="risk-row"><span>${label}</span><span style="font-weight:600;">${escapeHtml(item.name)} (徒歩${item.walkMin}分/${item.dist}m)</span></div>`
+            : `<div class="risk-row"><span>${label}</span><span style="color:#9aa0a6;">1km圏内なし</span></div>`;
+
+          summaryBox.style.display = 'block';
+          summaryBox.innerHTML = `
+            <div style="font-weight:700; font-size:11.5px; color:#1a73e8; margin-bottom:4px;">🛒 周辺1kmの最寄り施設</div>
+            ${fmt(nearestSummary.supermarket, '🛒 スーパー')}
+            ${fmt(nearestSummary.convenience, '🏪 コンビニ')}
+            ${fmt(nearestSummary.school, '🏫 学校・園')}
+            ${fmt(nearestSummary.medical, '🏥 病院・医院')}
+            ${nearestSummary.station ? fmt(nearestSummary.station, '🚉 最寄り駅') : ''}
+          `;
+        }
+        if (btn) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> 周辺施設ピンを表示しました';
+        }
+      } catch (e) {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> もう一度検索する';
+        }
+      }
+    };
+
     // --- ピンポイント地点のハザード自動判定エンジン（Canvasピクセル解析） ---
-    // 経緯度(lat, lng)から指定ズーム(z=16)のタイル座標(x, y)とタイル内ピクセル座標(px, py)を算出
     function latLngToTilePixel(lat, lng, z = 16) {
       const n = Math.pow(2, z);
       const xFloat = ((lng + 180) / 360) * n;
@@ -1278,7 +1771,6 @@
       return { z, x, y, px, py };
     }
 
-    // 指定URLのタイルから(px, py)のRGBAを取得
     function getTilePixelColor(templateUrl, coords) {
       return new Promise((resolve) => {
         const url = templateUrl
@@ -1301,12 +1793,11 @@
             resolve(null);
           }
         };
-        img.onerror = () => resolve(null); // 404等の場合は透明（該当なし）
+        img.onerror = () => resolve(null);
         img.src = url;
       });
     }
 
-    // 洪水浸水深のRGB判定（国交省公式タイルパレット準拠）
     function classifyFloodColor(rgba) {
       if (!rgba || rgba.a < 30) {
         return { label: '区域外（浸水想定なし）', level: 'safe', detail: '洪水浸水想定区域外です' };
@@ -1335,7 +1826,6 @@
       return bestMatch;
     }
 
-    // 土砂災害のRGB判定
     function classifyLandslideColors(steepRgba, debrisRgba, slideRgba) {
       const checks = [
         { name: 'がけ崩れ', rgba: steepRgba },
@@ -1348,8 +1838,7 @@
 
       for (const c of checks) {
         if (c.rgba && c.rgba.a >= 30) {
-          const { r, g, b } = c.rgba;
-          // 赤系（特別警戒区域 レッドゾーン）: Gが小さい
+          const { r, g } = c.rgba;
           if (r > 180 && g < 120) {
             detected.push(`${c.name}(特別警戒・赤)`);
             maxLevel = 'danger';
@@ -1366,7 +1855,6 @@
       return { label: detected.join(' / '), level: maxLevel };
     }
 
-    // --- 国土地理院 標高 & 逆ジオコーディング ---
     async function getElevation(lat, lng) {
       try {
         const res = await fetch(`https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=${lng}&lat=${lat}&outtype=JSON`);
@@ -1377,7 +1865,6 @@
       }
     }
 
-    // 都道府県・市区町村コード辞書（簡易対応＋OpenStreetMap Nominatimフォールバック）
     async function reverseGeocode(lat, lng) {
       try {
         const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`, {
@@ -1394,7 +1881,7 @@
       return `北緯${lat.toFixed(4)} 東経${lng.toFixed(4)}`;
     }
 
-    // --- 地図クリック時の自動診断ポップアップ ---
+    // --- 地図クリック時の総合自動診断ポップアップ ---
     let clickMarker = null;
     let selectedPointData = null;
 
@@ -1411,29 +1898,38 @@
         fillOpacity: 0.95
       }).addTo(map);
 
+      // 徒歩5分・10分サークル描画
+      drawWalkCircles(lat, lng);
+
       clickMarker.bindPopup(`
         <div style="padding: 10px; font-size: 13px; text-align: center; color: #5f6368;">
           <i class="fa-solid fa-spinner fa-spin" style="color: #1a73e8; font-size: 18px; margin-bottom: 6px;"></i><br>
-          ハザード情報と海抜を診断中...
+          ハザード・地盤(揺れやすさ)・避難所を診断中...
         </div>
       `).openPopup();
 
       const coords = latLngToTilePixel(lat, lng, 16);
 
-      // 並列で標高、住所、各ハザードタイルのピクセル色を取得
-      const [elevation, address, floodColor, steepColor, debrisColor, slideColor, collapseColor] = await Promise.all([
+      // 並列で全データを高速取得
+      const [elevation, address, floodColor, steepColor, debrisColor, slideColor, collapseColor, groundInfo, nearestShelter] = await Promise.all([
         getElevation(lat, lng),
         reverseGeocode(lat, lng),
         getTilePixelColor(TILE_URLS.flood, coords),
         getTilePixelColor(TILE_URLS.steep, coords),
         getTilePixelColor(TILE_URLS.debris, coords),
         getTilePixelColor(TILE_URLS.landslide, coords),
-        getTilePixelColor(TILE_URLS.collapse, coords)
+        getTilePixelColor(TILE_URLS.collapse, coords),
+        getGroundAmplification(lat, lng),
+        findNearestShelter(lat, lng)
       ]);
 
       const floodRisk = classifyFloodColor(floodColor);
       const landslideRisk = classifyLandslideColors(steepColor, debrisColor, slideColor);
       const hasCollapse = collapseColor && collapseColor.a >= 30;
+
+      const shelterText = nearestShelter
+        ? `${nearestShelter.name} (徒歩約${nearestShelter.walkMin}分/${nearestShelter.dist}m)`
+        : '周辺情報なし';
 
       selectedPointData = {
         lat,
@@ -1443,7 +1939,10 @@
         floodLabel: floodRisk.label,
         floodLevel: floodRisk.level,
         landslideLabel: landslideRisk.label,
-        landslideLevel: landslideRisk.level
+        landslideLevel: landslideRisk.level,
+        groundLabel: groundInfo.summary,
+        groundLevel: groundInfo.level,
+        shelterLabel: shelterText
       };
 
       const streetViewUrl = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
@@ -1454,10 +1953,10 @@
       const popupHtml = `
         <div class="hazard-popup">
           <div class="hazard-popup-header">
-            <span><i class="fa-solid fa-magnifying-glass-location" style="color: #1a73e8;"></i> 地点リスク診断結果</span>
+            <span><i class="fa-solid fa-magnifying-glass-location" style="color: #1a73e8;"></i> 地点リスク＆地盤診断</span>
             <span class="badge badge-elevation"><i class="fa-solid fa-mountain"></i> 海抜 ${elevation}</span>
           </div>
-          <div style="font-size: 12px; color: #3c4043; margin-bottom: 6px; font-weight: 500;">
+          <div style="font-size: 11.5px; color: #3c4043; margin-bottom: 5px; font-weight: 500;">
             <i class="fa-solid fa-location-dot" style="color: #5f6368;"></i> ${escapeHtml(address)}
           </div>
           
@@ -1466,25 +1965,35 @@
               <span class="hazard-popup-label">💧 洪水想定浸水深</span>
               <span class="badge ${getBadgeClass(floodRisk.level)}">${floodRisk.label}</span>
             </div>
-            <div style="font-size: 11px; color: #5f6368; text-align: right; margin-bottom: 2px;">
-              ${floodRisk.detail}
-            </div>
             <div class="risk-row">
               <span class="hazard-popup-label">⛰️ 土砂災害警戒</span>
               <span class="badge ${getBadgeClass(landslideRisk.level)}">${landslideRisk.label}</span>
             </div>
             <div class="risk-row">
-              <span class="hazard-popup-label">🏚️ 家屋倒壊等氾濫</span>
+              <span class="hazard-popup-label">🏚️ 家屋倒壊氾濫</span>
               <span class="badge ${hasCollapse ? 'badge-danger' : 'badge-safe'}">${hasCollapse ? '氾濫流 警戒区域内' : '区域外'}</span>
+            </div>
+            <div class="risk-row">
+              <span class="hazard-popup-label">🌐 地盤・地震揺れ</span>
+              <span class="badge ${getBadgeClass(groundInfo.level)}">${escapeHtml(groundInfo.summary)}</span>
+            </div>
+            <div class="risk-row">
+              <span class="hazard-popup-label">🏃 最寄り避難所</span>
+              <span style="font-weight: 600; color: #202124; text-align: right; font-size: 11px;">${escapeHtml(shelterText)}</span>
             </div>
           </div>
 
+          <div class="risk-box" id="poiSummaryBox" style="display: none; background: #f0f7ff; border-color: #d2e3fc;"></div>
+
           <div class="hazard-popup-actions">
+            <button class="btn-action btn-full" id="poiSearchBtn" onclick="searchNearbyFacilities(${lat}, ${lng})" style="background: #f8f9fa; color: #1a73e8; border-color: #d2e3fc;">
+              <i class="fa-solid fa-cart-shopping"></i> 周辺1kmのスーパー・学校・病院を検索
+            </button>
             <a href="${streetViewUrl}" target="_blank" class="btn-action" title="Googleストリートビューで現地の道路や周辺環境を見る">
               <i class="fa-solid fa-street-view" style="color: #ea4335;"></i> ストリートビュー
             </a>
             <a href="${googleMapsUrl}" target="_blank" class="btn-action" title="Googleマップ本家で周辺施設やルートを調べる">
-              <i class="fa-brands fa-google" style="color: #4285f4;"></i> Googleマップで開く
+              <i class="fa-brands fa-google" style="color: #4285f4;"></i> Googleマップ
             </a>
             <button class="btn-action btn-save-prop" onclick="openAddPropertyModal()">
               <i class="fa-solid fa-star"></i> この場所を検討中リストに保存
@@ -1496,10 +2005,10 @@
       clickMarker.setPopupContent(popupHtml);
     });
 
-    // --- 物件候補地（ローカルストレージ保存・比較・URLリンク）機能 ---
+    // --- 物件候補地（ローカルストレージ＋Firebase共有・評価・比較表）機能 ---
     let savedProperties = JSON.parse(localStorage.getItem('hazard_saved_properties_v2') || '[]');
     let propertyMarkers = {};
-    let editingPropertyIndex = null; // nullなら新規追加、数値なら既存編集
+    let editingPropertyIndex = null;
 
     function normalizeUrl(rawUrl) {
       if (!rawUrl) return '';
@@ -1507,6 +2016,18 @@
       if (!trimmed) return '';
       if (/^https?:\/\//i.test(trimmed)) return trimmed;
       return 'https://' + trimmed;
+    }
+
+    function getStatusBadgeHtml(status) {
+      const s = status || '🤔 検討中';
+      if (s.includes('本命')) return `<span class="badge badge-status-fav">${escapeHtml(s)}</span>`;
+      if (s.includes('内覧')) return `<span class="badge badge-status-visit">${escapeHtml(s)}</span>`;
+      return `<span class="badge badge-status-hold">${escapeHtml(s)}</span>`;
+    }
+
+    function getStarsHtml(rating) {
+      const r = parseInt(rating || 3, 10);
+      return '<span style="color:#fbbc04; font-size:11px; letter-spacing:-1px;">' + '★'.repeat(r) + '☆'.repeat(5 - r) + '</span>';
     }
 
     function updatePropertiesList() {
@@ -1534,9 +2055,15 @@
         card.className = 'property-card';
         card.innerHTML = `
           <div class="property-card-header">
-            <span class="property-name">${escapeHtml(prop.name)}</span>
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;">
+                ${getStatusBadgeHtml(prop.status)}
+                ${getStarsHtml(prop.rating)}
+              </div>
+              <span class="property-name">${escapeHtml(prop.name)}</span>
+            </div>
             <div style="display: flex; gap: 2px;">
-              <button class="property-delete-btn" onclick="editProperty(event, ${idx})" title="URLやメモを編集">
+              <button class="property-delete-btn" onclick="editProperty(event, ${idx})" title="URLや評価・メモを編集">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button class="property-delete-btn" onclick="deleteProperty(event, ${idx})" title="削除">
@@ -1548,10 +2075,12 @@
             <span class="badge badge-elevation"><i class="fa-solid fa-mountain"></i> 海抜 ${prop.elevation}</span>
             <span class="badge ${getBadgeClass(prop.floodLevel)}">💧 洪水: ${escapeHtml(prop.floodLabel)}</span>
             <span class="badge ${getBadgeClass(prop.landslideLevel)}">⛰️ 土砂: ${escapeHtml(prop.landslideLabel)}</span>
+            ${prop.groundLabel ? `<span class="badge ${getBadgeClass(prop.groundLevel || 'safe')}">🌐 ${escapeHtml(prop.groundLabel)}</span>` : ''}
             ${prop.price ? `<span class="badge" style="background:#f1f3f4; color:#3c4043;"><i class="fa-solid fa-yen-sign"></i> ${escapeHtml(prop.price)}</span>` : ''}
           </div>
           <div class="property-meta">
             <div><i class="fa-solid fa-location-dot" style="width: 14px;"></i> ${escapeHtml(prop.address)}</div>
+            ${prop.shelterLabel ? `<div style="font-size:11px; color:#5f6368; margin-top:2px;">🏃 避難所: ${escapeHtml(prop.shelterLabel)}</div>` : ''}
             ${prop.memo ? `<div style="margin-top: 4px; color: #202124; background: #f8f9fa; padding: 4px 8px; border-radius: 4px;">${escapeHtml(prop.memo)}</div>` : ''}
             ${safeUrl ? `
               <div style="margin-top: 8px;">
@@ -1602,6 +2131,10 @@
               <span><i class="fa-solid fa-house" style="color: ${pinColor};"></i> ${escapeHtml(prop.name)}</span>
               <span class="badge badge-elevation">海抜 ${prop.elevation}</span>
             </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              ${getStatusBadgeHtml(prop.status)}
+              ${getStarsHtml(prop.rating)}
+            </div>
             <div class="risk-box">
               <div class="risk-row">
                 <span class="hazard-popup-label">💧 洪水想定</span>
@@ -1611,6 +2144,16 @@
                 <span class="hazard-popup-label">⛰️ 土砂災害</span>
                 <span style="font-weight:700;">${escapeHtml(prop.landslideLabel)}</span>
               </div>
+              ${prop.groundLabel ? `
+              <div class="risk-row">
+                <span class="hazard-popup-label">🌐 地盤・揺れ</span>
+                <span style="font-weight:700;">${escapeHtml(prop.groundLabel)}</span>
+              </div>` : ''}
+              ${prop.shelterLabel ? `
+              <div class="risk-row">
+                <span class="hazard-popup-label">🏃 避難所</span>
+                <span style="font-weight:600; font-size:11px;">${escapeHtml(prop.shelterLabel)}</span>
+              </div>` : ''}
             </div>
             <div class="hazard-popup-item">
               <span class="hazard-popup-label">住所:</span>
@@ -1628,6 +2171,9 @@
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> 住宅情報ページを開く
                 </a>
               ` : ''}
+              <button class="btn-action btn-full" onclick="searchNearbyFacilities(${prop.lat}, ${prop.lng})" style="background: #f8f9fa; color: #1a73e8;">
+                <i class="fa-solid fa-cart-shopping"></i> 周辺1kmのスーパー・学校を表示
+              </button>
               <a href="${streetViewUrl}" target="_blank" class="btn-action">
                 <i class="fa-solid fa-street-view" style="color: #ea4335;"></i> ストリートビュー
               </a>
@@ -1649,6 +2195,7 @@
         sidebar.classList.add('collapsed');
         openSidebarBtn.style.display = 'flex';
       }
+      drawWalkCircles(prop.lat, prop.lng);
       map.flyTo([prop.lat, prop.lng], 16, { duration: 1.0 });
       if (propertyMarkers[idx]) {
         setTimeout(() => propertyMarkers[idx].openPopup(), 1050);
@@ -1664,7 +2211,7 @@
       }
     };
 
-    // モーダル制御（新規追加 & 既存編集）
+    // --- モーダル制御（新規追加 & 既存編集） ---
     const modal = document.getElementById('propertyModal');
 
     window.openAddPropertyModal = function() {
@@ -1672,11 +2219,14 @@
       editingPropertyIndex = null;
       document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-star" style="color: #fbbc04;"></i> 検討中物件・候補地の保存';
       document.getElementById('propNameInput').value = '';
+      document.getElementById('propStatusInput').value = '🤔 検討中';
+      document.getElementById('propRatingInput').value = '3';
       document.getElementById('propUrlInput').value = '';
       document.getElementById('propAddressInput').value = selectedPointData.address;
-      document.getElementById('propElevationInput').value = selectedPointData.elevation;
+      document.getElementById('propElevationInput').value = `海抜 ${selectedPointData.elevation} / 避難所: ${selectedPointData.shelterLabel || '-'}`;
       document.getElementById('propFloodInput').value = selectedPointData.floodLabel;
       document.getElementById('propLandslideInput').value = selectedPointData.landslideLabel;
+      document.getElementById('propGroundInput').value = selectedPointData.groundLabel || '-';
       document.getElementById('propPriceInput').value = '';
       document.getElementById('propMemoInput').value = '';
       modal.style.display = 'flex';
@@ -1690,11 +2240,14 @@
       editingPropertyIndex = idx;
       document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> 物件情報の編集';
       document.getElementById('propNameInput').value = prop.name || '';
+      document.getElementById('propStatusInput').value = prop.status || '🤔 検討中';
+      document.getElementById('propRatingInput').value = String(prop.rating || 3);
       document.getElementById('propUrlInput').value = prop.url || '';
       document.getElementById('propAddressInput').value = prop.address || '';
-      document.getElementById('propElevationInput').value = prop.elevation || '';
+      document.getElementById('propElevationInput').value = `海抜 ${prop.elevation || '-'} / 避難所: ${prop.shelterLabel || '-'}`;
       document.getElementById('propFloodInput').value = prop.floodLabel || '';
       document.getElementById('propLandslideInput').value = prop.landslideLabel || '';
+      document.getElementById('propGroundInput').value = prop.groundLabel || '-';
       document.getElementById('propPriceInput').value = prop.price || '';
       document.getElementById('propMemoInput').value = prop.memo || '';
       modal.style.display = 'flex';
@@ -1711,25 +2264,29 @@
 
     document.getElementById('savePropertyBtn').addEventListener('click', () => {
       const name = document.getElementById('propNameInput').value.trim() || `候補地 #${savedProperties.length + 1}`;
+      const status = document.getElementById('propStatusInput').value;
+      const rating = parseInt(document.getElementById('propRatingInput').value, 10) || 3;
       const url = document.getElementById('propUrlInput').value.trim();
       const address = document.getElementById('propAddressInput').value.trim();
       const price = document.getElementById('propPriceInput').value.trim();
       const memo = document.getElementById('propMemoInput').value.trim();
 
       if (editingPropertyIndex !== null && savedProperties[editingPropertyIndex]) {
-        // 既存物件の更新
         savedProperties[editingPropertyIndex] = {
           ...savedProperties[editingPropertyIndex],
           name,
+          status,
+          rating,
           url,
           address,
           price,
           memo
         };
       } else if (selectedPointData) {
-        // 新規保存
         savedProperties.push({
           name,
+          status,
+          rating,
           url,
           address,
           elevation: selectedPointData.elevation,
@@ -1737,6 +2294,9 @@
           floodLevel: selectedPointData.floodLevel,
           landslideLabel: selectedPointData.landslideLabel,
           landslideLevel: selectedPointData.landslideLevel,
+          groundLabel: selectedPointData.groundLabel,
+          groundLevel: selectedPointData.groundLevel,
+          shelterLabel: selectedPointData.shelterLabel,
           price,
           memo,
           lat: selectedPointData.lat,
@@ -1750,6 +2310,73 @@
       updatePropertiesList();
       if (clickMarker) clickMarker.closePopup();
     });
+
+    // --- ⑧ 横並び比較表モーダル制御 ---
+    const compareModal = document.getElementById('compareModal');
+    const compareTableContainer = document.getElementById('compareTableContainer');
+
+    document.getElementById('openCompareBtn').addEventListener('click', () => {
+      if (savedProperties.length === 0) {
+        alert('まだ比較できる候補地が登録されていません。');
+        return;
+      }
+      const getBadgeClass = (lvl) => lvl === 'danger' ? 'badge-danger' : (lvl === 'warn' ? 'badge-warn' : 'badge-safe');
+
+      let rowsHtml = savedProperties.map((p, idx) => {
+        const safeUrl = normalizeUrl(p.url);
+        return `
+          <tr>
+            <td style="font-weight:700; color:#202124;">
+              <a href="javascript:void(0);" onclick="closeCompareAndFocus(${idx})" style="color:#1a73e8; text-decoration:none;">
+                ${escapeHtml(p.name)}
+              </a>
+            </td>
+            <td>${getStatusBadgeHtml(p.status)}<br>${getStarsHtml(p.rating)}</td>
+            <td style="font-weight:600;">${escapeHtml(p.price || '-')}</td>
+            <td><span class="badge badge-elevation">海抜 ${escapeHtml(p.elevation || '-')}</span></td>
+            <td><span class="badge ${getBadgeClass(p.floodLevel)}">${escapeHtml(p.floodLabel || '-')}</span></td>
+            <td><span class="badge ${getBadgeClass(p.landslideLevel)}">${escapeHtml(p.landslideLabel || '-')}</span></td>
+            <td><span class="badge ${getBadgeClass(p.groundLevel || 'safe')}">${escapeHtml(p.groundLabel || '-')}</span></td>
+            <td style="font-size:11px;">${escapeHtml(p.shelterLabel || '-')}</td>
+            <td style="max-width:180px;">${escapeHtml(p.memo || '-')}</td>
+            <td>
+              ${safeUrl ? `<a href="${escapeAttr(safeUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action" style="color:#1a73e8;">物件ページ ↗</a>` : '-'}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      compareTableContainer.innerHTML = `
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>物件・候補地名</th>
+              <th>ステータス / 評価</th>
+              <th>家賃・価格</th>
+              <th>海抜</th>
+              <th>💧 洪水浸水深</th>
+              <th>⛰️ 土砂災害</th>
+              <th>🌐 地盤・揺れやすさ</th>
+              <th>🏃 最寄り避難所</th>
+              <th>家族メモ</th>
+              <th>住宅情報URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+      `;
+      compareModal.style.display = 'flex';
+    });
+
+    window.closeCompareAndFocus = function(idx) {
+      compareModal.style.display = 'none';
+      focusProperty(idx);
+    };
+
+    document.getElementById('closeCompareModalBtn').addEventListener('click', () => compareModal.style.display = 'none');
+    document.getElementById('closeCompareFooterBtn').addEventListener('click', () => compareModal.style.display = 'none');
 
     // --- 住所・駅名 検索機能（国土地理院API） ---
     const searchInput = document.getElementById('searchInput');
@@ -1892,12 +2519,12 @@
 
     function escapeHtml(str) {
       if (!str) return '';
-      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
     }
 
     function escapeAttr(str) {
       if (!str) return '';
-      return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#039;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#039;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     updatePropertiesList();
@@ -1937,7 +2564,6 @@
         firebase.initializeApp(FIREBASE_CONFIG);
       }
       const db = firebase.firestore();
-      // familiesコレクション内のハザードマップ専用共有ドキュメント
       firestoreDocRef = db.collection('families').doc('hazard_map_family');
 
       firestoreDocRef.onSnapshot((docSnap) => {
@@ -1951,7 +2577,6 @@
             updatePropertiesList();
           }
         } else if (savedProperties.length > 0) {
-          // 初回接続時にローカルデータをクラウドへ引き継ぎ
           persistProperties();
         }
       }, (err) => {
