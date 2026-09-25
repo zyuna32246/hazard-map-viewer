@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a73e8" />
+      <stop offset="100%" stop-color="#0d47a1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bg)" />
+  <!-- 地図ピンと家のモチーフ -->
+  <path d="M256 76c-79.5 0-144 64.5-144 144 0 108 144 216 144 216s144-108 144-216c0-79.5-64.5-144-144-144z" fill="#ffffff" opacity="0.95"/>
+  <path d="M256 140l-76 64h22v68h42v-46h24v46h42v-68h22l-76-64z" fill="#1a73e8"/>
+  <circle cx="380" cy="132" r="52" fill="#fbbc04" stroke="#ffffff" stroke-width="10"/>
+  <path d="M380 104v34m0 18h.01" stroke="#202124" stroke-width="12" stroke-linecap="round"/>
+</svg>
